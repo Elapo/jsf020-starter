@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:view>
+    <h:head>
+        <title><ui:insert name="pageTitle"/></title>
+        <link rel="stylesheet" href=""/>
+    </h:head>
+    <h:body>
+        <h:graphicImage value="" alt="Logo"/> <!--logo -->
+        <h1><ui:insert name="pageTitle"/></h1>
+        <main>
+            <ui:insert name="pageContent">
+                <p>default content</p>
+            </ui:insert>
+        </main>
+        <p>&copy; 2016 - Realdolmen</p>
+    </h:body>
+</f:view>
+</html>

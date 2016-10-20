@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+    <cc:interface>
+        <cc:attribute name="finances" required="true"/>
+    </cc:interface>
+    <cc:implementation>
+        <table>
+            <c:forEach items="#{cc.attrs.finances}" var="financeValue">
+                <tr>
+                    <td>#{financeValue.department}</td>
+                    <td>#{financeValue.money}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </cc:implementation>
+</html>
