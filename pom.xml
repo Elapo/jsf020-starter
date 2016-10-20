@@ -18,6 +18,7 @@
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.8</version>
+			<!-- uncomment for Jboss <scope>provided</scope>-->
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -29,6 +30,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.0</version>
 		</dependency>
 	</dependencies>
 

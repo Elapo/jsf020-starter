@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <h:head>
+    <style>
+        html{
+            font-family: "Comic Sans MS";
+            color: #6a3569;
+        }
+        td{
+            width: 150px;
+        }
+    </style>
+  </h:head>
+  <h:body>
+	<h1>Your data:</h1>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>#{registrationBean.firstName} #{registrationBean.lastName}</td>
+        </tr>
+        <tr>
+            <td>Date Of Birth</td>
+            <td>#{registrationBean.dateOfBirth}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>#{registrationBean.email}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>#{registrationBean.gender}</td>
+        </tr>
+        <tr>
+            <td>Service Level</td>
+            <td>#{registrationBean.serviceLevel}</td>
+        </tr>
+    </table>
+  </h:body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+  <h:head>
+    <style>
+        html{
+            font-family: "Comic Sans MS";
+            color: #6a3569;
+        }
+        td{
+            width: 150px;
+        }
+    </style>
+  </h:head>
+  <h:body>
+	<h1>Please enter your data:</h1>
+    <h:form>
+        First name:<br/>
+        <h:inputText value="#{registrationBean.firstName}" required="true"/><br/>
+        Last name:<br/>
+        <h:inputText value="#{registrationBean.lastName}" required="true"/><br/>
+        Email:<br/>
+        <h:inputText value="#{registrationBean.email}" required="true"/><br/>
+        Date of Birth:<br/>
+        <!--<h:inputText value="#{registrationBean.dateOfBirth}">#{registrationBean.dateOfBirth}</h:inputText>-->
+        <p:calendar id="inline" value="#{registrationBean.dateOfBirthDate}" required="true"/><br/>
+        Gender:<br/>
+        <h:selectOneRadio value="#{registrationBean.gender}">
+            <f:selectItem itemValue="male" itemLabel="Male"/>
+            <f:selectItem itemValue="female" itemLabel="Female"/>
+        </h:selectOneRadio><br/>
+        Service Level:<br/>
+        <h:selectOneMenu value="#{registrationBean.serviceLevel}">
+            <f:selectItem itemValue="High" itemLabel="High"/>
+            <f:selectItem itemValue="Medium" itemLabel="Medium"/>
+            <f:selectItem itemValue="Low" itemLabel="Low"/>
+        </h:selectOneMenu><br/>
+        <h:commandButton action="#{registrationBean.register}" value="Register"/>
+    </h:form>
+  </h:body>
+</html>
