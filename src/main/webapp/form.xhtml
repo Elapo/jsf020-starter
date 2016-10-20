@@ -16,28 +16,30 @@
   </h:head>
   <h:body>
 	<h1>Please enter your data:</h1>
-    <h:form>
-        First name:<br/>
-        <h:inputText value="#{registrationBean.firstName}" required="true"/><br/>
-        Last name:<br/>
-        <h:inputText value="#{registrationBean.lastName}" required="true"/><br/>
-        Email:<br/>
-        <h:inputText value="#{registrationBean.email}" required="true"/><br/>
-        Date of Birth:<br/>
-        <!--<h:inputText value="#{registrationBean.dateOfBirth}">#{registrationBean.dateOfBirth}</h:inputText>-->
-        <p:calendar id="inline" value="#{registrationBean.dateOfBirthDate}" required="true"/><br/>
-        Gender:<br/>
-        <h:selectOneRadio value="#{registrationBean.gender}">
-            <f:selectItem itemValue="male" itemLabel="Male"/>
-            <f:selectItem itemValue="female" itemLabel="Female"/>
-        </h:selectOneRadio><br/>
-        Service Level:<br/>
-        <h:selectOneMenu value="#{registrationBean.serviceLevel}">
-            <f:selectItem itemValue="High" itemLabel="High"/>
-            <f:selectItem itemValue="Medium" itemLabel="Medium"/>
-            <f:selectItem itemValue="Low" itemLabel="Low"/>
-        </h:selectOneMenu><br/>
-        <h:commandButton action="#{registrationBean.register}" value="Register"/>
-    </h:form>
+      <p:panel id="horizontal" header="Registration Form" toggleable="true" style="width: 500px">
+          <h:form>
+            First name:<br/>
+            <h:inputText value="#{registrationBean.firstName}" required="true"/><br/>
+            Last name:<br/>
+            <h:inputText value="#{registrationBean.lastName}" required="true"/><br/>
+            Email:<br/>
+            <h:inputText value="#{registrationBean.email}" required="true"/><br/>
+            Date of Birth:<br/>
+            <!--<h:inputText value="#{registrationBean.dateOfBirth}">#{registrationBean.dateOfBirth}</h:inputText>-->
+            <p:calendar id="inline" value="#{registrationBean.dateOfBirthDate}" required="true"/><br/>
+            Gender:<br/>
+            <h:selectOneRadio value="#{registrationBean.gender}">
+                <f:selectItem itemValue="male" itemLabel="Male"/>
+                <f:selectItem itemValue="female" itemLabel="Female"/>
+            </h:selectOneRadio><br/>
+            Service Level:<br/>
+            <h:selectOneMenu value="#{registrationBean.serviceLevel}">
+                <f:selectItem itemValue="High" itemLabel="High"/>
+                <f:selectItem itemValue="Medium" itemLabel="Medium"/>
+                <f:selectItem itemValue="Low" itemLabel="Low"/>
+            </h:selectOneMenu><br/>
+            <h:commandButton action="#{registrationBean.register}" value="Register"/>
+        </h:form>
+      </p:panel>
   </h:body>
 </html>
