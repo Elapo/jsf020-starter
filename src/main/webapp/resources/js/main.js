@@ -3,11 +3,11 @@ $('document').ready(function(){
     var da=$('#dalinkimg');
     $('#ytlink').hover(function(){
         yt.fadeOut(0, function(){
-            yt.attr("src", "assets/img/youtubelogored.png").fadeIn(0);
+            yt.attr("src", "javax.faces.resource/youtubelogored.png.xhtml?ln=img").fadeIn(0);
         });
     }, function(){
         yt.fadeOut(0, function(){
-            yt.attr("src", "assets/img/youtubelogo.png").fadeIn(0);
+            yt.attr("src", "javax.faces.resource/youtubelogo.png.xhtml?ln=img").fadeIn(0);
         });
     });
     

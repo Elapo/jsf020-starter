@@ -6,11 +6,16 @@ import javax.faces.bean.SessionScoped;
 /**
  * Created by Frederik Van Herbruggen on 20/10/2016.
  */
-public class FinancesBean {
+@ManagedBean
+@SessionScoped
+public class FinancesObject {
     private String department;
     private double money;
 
-    public FinancesBean(String dep, double money){
+    public FinancesObject(){
+
+    }
+    public FinancesObject(String dep, double money){
         this.department = dep;
         this.money = money;
     }

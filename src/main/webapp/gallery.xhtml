@@ -6,6 +6,11 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <ui:composition template="WEB-INF/templates/iTemplate.xhtml">
+        <ui:define name="pageTitle">Home</ui:define>
+        <ui:define name="mainContent">
+            --Imagine the gallery being here--
+        </ui:define>
+    </ui:composition>
 </f:view>
 </html>

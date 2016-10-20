@@ -1,23 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Created by IntelliJ IDEA.
-  User: FVHBB94
-  Date: 20/10/2016
-  Time: 16:23
--->
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-    <title>$Title$</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Home pagina"/>
+    <meta name="keywords" content="biografie, gallery, contact"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Iris VC - <ui:insert name="pageTitle"/></title>
+    <h:outputStylesheet name="bootstrap.min.css" library="css"/>
+    <h:outputStylesheet name="main.css" library="css"/>
+    <h:outputLink name="icon.ico" library="img" rel="icon"/>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 </h:head>
-
 <h:body>
-    $END$
-</h:body>
+<div class="row">
+    <div class="col-md-12 titlebar">
+        <a href="index.php">
+            <h:graphicImage name="logoivc.png" library="img" alt="Logo" width= "72" height="65"/>
+            <h1 id="logo-text">Iris Verbert-Caes</h1>
+            <h2 id="logo-text-2">Graphic designer / Illustrator</h2>
+        </a>
+    </div>
+</div>
+<div class="row custom-nav">
+    <ul>
+        <li><a class="nav-link-hover" href="work.php">My Work</a></li>
+        <li><a class="nav-link-hover" href="contact.php">Contact Me</a></li>
+    </ul>
+</div>
 
+    <div class="row content">
+        <ui:insert name="mainContent"/>
+    </div>
+    <div class="row footer">
+        <div class="col-md-12">
+            <a class="nav-link-hover" href="https://www.youtube.com/channel/UCmput-lUFDy3xB6BF2hdezA">
+                <div id="ytlink">
+                    <p>
+                        <h:graphicImage name="youtubelogo.png" library="img" id="ytlinkimg" alt="youtube" width="20"/>
+                        Youtube
+                    </p>
+                </div>
+            </a>
+            <a class="nav-link-hover" href="http://irisv-c.deviantart.com/">
+                <div id="dalink">
+                    <p>
+                        <h:graphicImage library="img" id="dalinkimg" name="deviantartlogo.png" alt="DA" width="20"/>
+                        DeviantArt
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h:outputScript name="main.js" library="js" />
+</h:body>
 </html>

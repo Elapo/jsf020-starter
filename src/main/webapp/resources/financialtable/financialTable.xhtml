@@ -2,7 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
-      xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
     <cc:interface>
         <cc:attribute name="finances" required="true"/>
     </cc:interface>
@@ -15,5 +16,14 @@
                 </tr>
             </c:forEach>
         </table>
+        <p:dataTable var="fv" value="#{financeContainer.financeValues}">
+            <p:column headerText="Department">
+                #{fv.department}
+            </p:column>
+
+            <p:column headerText="Money">
+                #{fv.money}
+            </p:column>
+        </p:dataTable>
     </cc:implementation>
 </html>
