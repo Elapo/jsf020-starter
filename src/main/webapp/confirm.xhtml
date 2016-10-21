@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
   <h:head>
     <style>
         html{
@@ -15,27 +16,21 @@
   </h:head>
   <h:body>
 	<h1>Your data:</h1>
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>#{registrationBean.firstName} #{registrationBean.lastName}</td>
-        </tr>
-        <tr>
-            <td>Date Of Birth</td>
-            <td>#{registrationBean.dateOfBirth}</td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td>#{registrationBean.email}</td>
-        </tr>
-        <tr>
-            <td>Gender</td>
-            <td>#{registrationBean.gender}</td>
-        </tr>
-        <tr>
-            <td>Service Level</td>
-            <td>#{registrationBean.serviceLevel}</td>
-        </tr>
-    </table>
+      <p:panelGrid columns="2">
+          <h:outputText value="Name"/>
+          <h:outputText value="#{registrationBean.user.firstName} #{registrationBean.user.lastName}"/>
+          <h:outputText value="Email"/>
+          <h:outputText value="#{registrationBean.user.email}"/>
+          <h:outputText value="Date Of Birth"/>
+          <h:outputText value="#{registrationBean.user.dateOfBirth}"/>
+          <h:outputText value="Gender"/>
+          <h:outputText value="#{registrationBean.user.gender}"/>
+          <h:outputText value="Service Level"/>
+          <h:outputText value="#{registrationBean.user.serviceLevel}"/>
+      </p:panelGrid>
+      <br/>
+      <h:button value="Confirm" outcome="thanks"/>
+      <h:button value="Edit" outcome="form"/>
+      <h:button value="Cancel" outcome="home"/>
   </h:body>
 </html>

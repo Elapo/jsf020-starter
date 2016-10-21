@@ -2,7 +2,9 @@ package com.realdolmen.course.web.controller;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,79 +15,50 @@ import java.util.Date;
 @SessionScoped
 public class RegistrationBean {
 
-    private String firstName = "Frederik",
-            lastName = "Van Herbruggen",
-            dateOfBirth = "26/10/2016",
-            gender = "male",
-            email = "frederik.vanherbruggen@realdolmen.com",
-            serviceLevel = "High";
+    @ManagedProperty("#{registeredUsers}")
+    private RegisteredUsers db;
 
-    private Date dateOfBirthDate = new Date();
+    private User user;
+
+    private boolean editmode = true;
     @PostConstruct
     private void init(){
-
+        user = new User();
     }
 
     public String register(){
-        System.out.println("Redirecting...");
-        return "confirm";
+        db.addUser(user);
+        String name= user.getFirstName();
+        user = new User();
+        return "thanks?name="+name;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String toggleEdit(){
+        editmode = !editmode;
+        return "form?faces-redirect=true";
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public User getUser() {
+        return user;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public RegisteredUsers getDb() {
+        return db;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public void setDb(RegisteredUsers db) {
+        this.db = db;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public boolean getEditmode() {
+        return editmode;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getServiceLevel() {
-        return serviceLevel;
-    }
-
-    public void setServiceLevel(String serviceLevel) {
-        this.serviceLevel = serviceLevel;
-    }
-
-    public Date getDateOfBirthDate() {
-        return dateOfBirthDate;
-    }
-
-    public void setDateOfBirthDate(Date dateOfBirthDate) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        this.dateOfBirthDate = dateOfBirthDate;
-        this.dateOfBirth = sdf.format(dateOfBirthDate);
+    public void setEditmode(boolean editmode) {
+        this.editmode = editmode;
     }
 }

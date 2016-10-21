@@ -1,0 +1,30 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+    <url-mapping id="view-home">
+        <pattern value="/" />
+        <view-id value="/index.xhtml" />
+    </url-mapping>
+    <url-mapping id="view-form">
+        <pattern value="/register" />
+        <view-id value="/form.xhtml" />
+    </url-mapping>
+    <url-mapping id="view-finances">
+        <pattern value="/finances" />
+        <view-id value="/financial.xtml" />
+    </url-mapping>
+    <url-mapping id="view-confirm">
+        <pattern value="/register/confirm" />
+        <view-id value="/confirm.xhtml" />
+    </url-mapping>
+    <url-mapping id="view-thanks">
+        <pattern value="/register/confirm/thanks/#{name}" />
+        <view-id value="/thanks.xhtml" />
+    </url-mapping>
+    <url-mapping id="view-userid">
+        <pattern value="/user/#{id}"/>
+        <view-id value="/profile.xhtml"/>
+    </url-mapping>
+</pretty-config>

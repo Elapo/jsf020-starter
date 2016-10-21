@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
+<cc:interface>
+    <cc:attribute name="userObject" required="true"/>
+</cc:interface>
+<cc:implementation>
+    <p:dataTable value="#{cc.attrs.userObject}" var="user">
+        <p:column headerText="Name">
+            #{user.firstName} #{user.lastName}
+        </p:column>
+        <p:column headerText="Email">
+            #{user.email}
+        </p:column>
+        <p:column headerText="Date of birth">
+            #{user.dateOfBirth}
+        </p:column>
+        <p:column headerText="Gender">
+            #{user.gender}
+        </p:column>
+        <p:column headerText="Service Level">
+            #{user.serviceLevel}
+        </p:column>
+    </p:dataTable>
+</cc:implementation>
+</html>
